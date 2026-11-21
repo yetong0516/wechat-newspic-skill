@@ -49,14 +49,14 @@ python scripts/create_demo.py output/my-demo --pages 7
 
 ## 作为技能使用
 
-本仓库根目录就是一个完整技能包。将它复制或链接到所用智能体的技能目录，并命名为 `wechat-newspic`。例如，本机使用标准 Codex 技能目录时可创建符号链接：
+本仓库根目录就是一个完整技能包。将它复制或链接到所用智能体的技能目录，并命名为 `wechat-newspic`。例如，按[当前官方文档](https://learn.chatgpt.com/docs/build-skills)，Codex 个人技能目录为 `~/.agents/skills`。在克隆的仓库根目录执行：
 
 ```bash
-mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
-ln -s "$PWD" "${CODEX_HOME:-$HOME/.codex}/skills/wechat-newspic"
+mkdir -p "$HOME/.agents/skills"
+ln -s "$PWD" "$HOME/.agents/skills/wechat-newspic"
 ```
 
-如果该路径已有技能，先检查现有内容，不要覆盖。示例请求：
+如果该路径已有技能，先检查现有内容，不要覆盖。Codex 会自动发现技能变化；未出现时重启客户端。示例请求：
 
 > 用 `$wechat-newspic` 根据这篇论文做一组公众号贴图，保留实验设置和关键限制。
 
