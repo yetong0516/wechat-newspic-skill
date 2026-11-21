@@ -1,0 +1,78 @@
+{
+  "format_contract": "wechat-newspic-v1",
+  "title": "科研公众号贴图的排版与交付示例",
+  "brand": "Research Notes",
+  "section": "顶刊精读",
+  "date": "2026-11-21",
+  "author": "Example Editor",
+  "demo_only": true,
+  "source_url": "https://github.com/yetong0516/wechat-newspic-skill",
+  "hashtags": [
+    "#排版演示",
+    "#科研传播"
+  ],
+  "content": "这是一份公众号贴图的排版演示，三幅几何图都是程序绘制的测试素材，用来检查封面、证据页、收尾页与中文排版。图中不含实验结果，也不代表任何模型性能。正式制作时，需要换成经过核验并记录来源与许可的真实图片，逐页查看成图后再保存草稿。\n\n示例：https://github.com/yetong0516/wechat-newspic-skill\n\n#排版演示 #科研传播",
+  "cards": [
+    {
+      "role": "cover",
+      "image": "images/layout-1.png",
+      "headline": "科研公众号贴图\n从材料到七页成图",
+      "kicker": "LAYOUT DEMO · 排版示例",
+      "dek": "用明确标注的演示素材，检查中文、原图位置与页面顺序。",
+      "credit": "图1｜几何形状仅用于排版演示"
+    },
+    {
+      "role": "evidence",
+      "image": "images/layout-3.png",
+      "headline": "每一页解释一个具体问题",
+      "stat": "1080 × 1440",
+      "stat_label": "微信贴图的输出像素尺寸",
+      "note": "这里放一条经过原文核对的结果，并在同一页说明对应样本、指标或限制。本页仅为版式演示；图中形状不表示科学数据。",
+      "credit": "图2｜不同形状用于检查图片缩放和文字位置"
+    },
+    {
+      "role": "evidence",
+      "image": "images/layout-1.png",
+      "headline": "每一页解释一个具体问题",
+      "stat": "1080 × 1440",
+      "stat_label": "微信贴图的输出像素尺寸",
+      "note": "这里放一条经过原文核对的结果，并在同一页说明对应样本、指标或限制。本页仅为版式演示；图中形状不表示科学数据。",
+      "credit": "图3｜不同形状用于检查图片缩放和文字位置"
+    },
+    {
+      "role": "evidence",
+      "image": "images/layout-2.png",
+      "headline": "每一页解释一个具体问题",
+      "stat": "1080 × 1440",
+      "stat_label": "微信贴图的输出像素尺寸",
+      "note": "这里放一条经过原文核对的结果，并在同一页说明对应样本、指标或限制。本页仅为版式演示；图中形状不表示科学数据。",
+      "credit": "图4｜不同形状用于检查图片缩放和文字位置"
+    },
+    {
+      "role": "evidence",
+      "image": "images/layout-3.png",
+      "headline": "每一页解释一个具体问题",
+      "stat": "1080 × 1440",
+      "stat_label": "微信贴图的输出像素尺寸",
+      "note": "这里放一条经过原文核对的结果，并在同一页说明对应样本、指标或限制。本页仅为版式演示；图中形状不表示科学数据。",
+      "credit": "图5｜不同形状用于检查图片缩放和文字位置"
+    },
+    {
+      "role": "evidence",
+      "image": "images/layout-1.png",
+      "headline": "每一页解释一个具体问题",
+      "stat": "1080 × 1440",
+      "stat_label": "微信贴图的输出像素尺寸",
+      "note": "这里放一条经过原文核对的结果，并在同一页说明对应样本、指标或限制。本页仅为版式演示；图中形状不表示科学数据。",
+      "credit": "图6｜不同形状用于检查图片缩放和文字位置"
+    },
+    {
+      "role": "boundary",
+      "image": "images/layout-3.png",
+      "headline": "交稿前，把证据和边界一起检查",
+      "claim": "正式稿逐项核对关键数字、真实图源、图序和标题承诺，再查看全部页面。",
+      "limit": "这个示例仅验证排版，保存命令会拒绝把它上传到公众号。请用自己的真实材料创建正式稿。",
+      "credit": "图7｜测试素材帮助发现版式问题"
+    }
+  ]
+}

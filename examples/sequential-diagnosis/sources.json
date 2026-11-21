@@ -1,0 +1,169 @@
+{
+  "format_contract": "wechat-newspic-v1",
+  "topic": "大语言模型的序列诊断：SDBench与DxO",
+  "topic_key": "sequential-diagnosis-science-aeh7930",
+  "main_source": {
+    "title": "Sequential diagnosis with language models",
+    "url": "https://www.science.org/doi/10.1126/science.aeh7930",
+    "published": "2026-10-22",
+    "status": "正式发表的同行评议论文",
+    "doi": "10.1126/science.aeh7930",
+    "journal": "Science 394, 423–428"
+  },
+  "additional_sources": [
+    {
+      "url": "https://www.eurekalert.org/news-releases/1148310",
+      "role": "AAAS新闻稿：核对发表与总体设计"
+    },
+    {
+      "url": "https://arxiv.org/abs/2506.22405",
+      "role": "历史预印本身份；不采用其o3、80%和20%旧版数字"
+    }
+  ],
+  "images": [
+    {
+      "file": "images/figures/fig-1-case-opening.png",
+      "source_page_url": "https://www.science.org/doi/10.1126/science.aeh7930",
+      "origin_url": "https://www.science.org/doi/10.1126/science.aeh7930",
+      "asset_type": "source_original",
+      "retrieval_method": "pdf-render-crop",
+      "license": "Copyright 2026 The Authors; exclusive licensee AAAS. Public redistribution permission not established; source images are not included in this repository.",
+      "license_url": "https://www.science.org/help/reprints-and-permissions",
+      "credit": "Harsha Nori et al. / Science / Microsoft",
+      "caption": "论文Figure 1上半部：问病史、索取检查结果；两侧对话保持原顺序",
+      "source_pdf": "User-provided local copy; not redistributed",
+      "page": 2,
+      "crop_box_points": [
+        37,
+        39,
+        556,
+        365
+      ],
+      "render_scale": 4,
+      "modifications": "仅按记录坐标裁切、等比排版；未改原图内容、数据或标签",
+      "sha256": "GENERATED_WHEN_LOCAL_PDF_IS_SUPPLIED",
+      "width": 2076,
+      "height": 1304
+    },
+    {
+      "file": "images/figures/fig-2-benchmark.png",
+      "source_page_url": "https://www.science.org/doi/10.1126/science.aeh7930",
+      "origin_url": "https://www.science.org/doi/10.1126/science.aeh7930",
+      "asset_type": "source_original",
+      "retrieval_method": "pdf-render-crop",
+      "license": "Copyright 2026 The Authors; exclusive licensee AAAS. Public redistribution permission not established; source images are not included in this repository.",
+      "license_url": "https://www.science.org/help/reprints-and-permissions",
+      "credit": "Harsha Nori et al. / Science / Microsoft",
+      "caption": "论文Figure 2完整流程，保留Gatekeeper、Judge与费用估算关系",
+      "source_pdf": "User-provided local copy; not redistributed",
+      "page": 3,
+      "crop_box_points": [
+        37,
+        42,
+        556,
+        432
+      ],
+      "render_scale": 4,
+      "modifications": "仅按记录坐标裁切、等比排版；未改原图内容、数据或标签",
+      "sha256": "GENERATED_WHEN_LOCAL_PDF_IS_SUPPLIED",
+      "width": 2076,
+      "height": 1560
+    },
+    {
+      "file": "images/figures/fig-3-cpc.png",
+      "source_page_url": "https://www.science.org/doi/10.1126/science.aeh7930",
+      "origin_url": "https://www.science.org/doi/10.1126/science.aeh7930",
+      "asset_type": "source_original",
+      "retrieval_method": "pdf-render-crop",
+      "license": "Copyright 2026 The Authors; exclusive licensee AAAS. Public redistribution permission not established; source images are not included in this repository.",
+      "license_url": "https://www.science.org/help/reprints-and-permissions",
+      "credit": "Harsha Nori et al. / Science / Microsoft",
+      "caption": "论文Figure 3完整坐标、各模型与医生对照图例",
+      "source_pdf": "User-provided local copy; not redistributed",
+      "page": 4,
+      "crop_box_points": [
+        47,
+        40.4,
+        547,
+        344.48682
+      ],
+      "render_scale": 4,
+      "modifications": "仅按记录坐标裁切、等比排版；未改原图内容、数据或标签",
+      "sha256": "GENERATED_WHEN_LOCAL_PDF_IS_SUPPLIED",
+      "width": 2000,
+      "height": 1217
+    },
+    {
+      "file": "images/figures/fig-4-cpc-budget.png",
+      "source_page_url": "https://www.science.org/doi/10.1126/science.aeh7930",
+      "origin_url": "https://www.science.org/doi/10.1126/science.aeh7930",
+      "asset_type": "source_original",
+      "retrieval_method": "pdf-render-crop",
+      "license": "Copyright 2026 The Authors; exclusive licensee AAAS. Public redistribution permission not established; source images are not included in this repository.",
+      "license_url": "https://www.science.org/help/reprints-and-permissions",
+      "credit": "Harsha Nori et al. / Science / Microsoft",
+      "caption": "论文Figure 3复用；本页解释同一条曲线上的预算受限配置",
+      "source_pdf": "User-provided local copy; not redistributed",
+      "page": 4,
+      "crop_box_points": [
+        47,
+        40.4,
+        547,
+        344.48682
+      ],
+      "render_scale": 4,
+      "modifications": "仅按记录坐标裁切、等比排版；未改原图内容、数据或标签",
+      "sha256": "GENERATED_WHEN_LOCAL_PDF_IS_SUPPLIED",
+      "width": 2000,
+      "height": 1217
+    },
+    {
+      "file": "images/figures/fig-5-ed.png",
+      "source_page_url": "https://www.science.org/doi/10.1126/science.aeh7930",
+      "origin_url": "https://www.science.org/doi/10.1126/science.aeh7930",
+      "asset_type": "source_original",
+      "retrieval_method": "pdf-render-crop",
+      "license": "Copyright 2026 The Authors; exclusive licensee AAAS. Public redistribution permission not established; source images are not included in this repository.",
+      "license_url": "https://www.science.org/help/reprints-and-permissions",
+      "credit": "Harsha Nori et al. / Science / Microsoft",
+      "caption": "论文Figure 4完整坐标、模型与医生对照图例",
+      "source_pdf": "User-provided local copy; not redistributed",
+      "page": 5,
+      "crop_box_points": [
+        47,
+        40.4,
+        547,
+        344.48688
+      ],
+      "render_scale": 4,
+      "modifications": "仅按记录坐标裁切、等比排版；未改原图内容、数据或标签",
+      "sha256": "GENERATED_WHEN_LOCAL_PDF_IS_SUPPLIED",
+      "width": 2000,
+      "height": 1217
+    },
+    {
+      "file": "images/figures/fig-6-case-end.png",
+      "source_page_url": "https://www.science.org/doi/10.1126/science.aeh7930",
+      "origin_url": "https://www.science.org/doi/10.1126/science.aeh7930",
+      "asset_type": "source_original",
+      "retrieval_method": "pdf-render-crop",
+      "license": "Copyright 2026 The Authors; exclusive licensee AAAS. Public redistribution permission not established; source images are not included in this repository.",
+      "license_url": "https://www.science.org/help/reprints-and-permissions",
+      "credit": "Harsha Nori et al. / Science / Microsoft",
+      "caption": "论文Figure 1下半部：进一步检查、最终诊断及Judge比对结果",
+      "source_pdf": "User-provided local copy; not redistributed",
+      "page": 2,
+      "crop_box_points": [
+        38,
+        365,
+        556,
+        642
+      ],
+      "render_scale": 4,
+      "modifications": "仅按记录坐标裁切、等比排版；未改原图内容、数据或标签",
+      "sha256": "GENERATED_WHEN_LOCAL_PDF_IS_SUPPLIED",
+      "width": 2072,
+      "height": 1108
+    }
+  ]
+}

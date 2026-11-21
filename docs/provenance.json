@@ -1,0 +1,23 @@
+{
+  "upstream": "https://github.com/yetong0516/BioSpark_AI-For-Bios_WeChat-OA-Automation-Pipeline",
+  "snapshot_date": "2026-11-21",
+  "basis": "Selected files from the maintained working tree; no upstream Git history copied.",
+  "files": [
+    {
+      "path": "scripts/newspic.py",
+      "source_sha256": "8e99f44fefa787e5d73daa80ccbcd656400537e4ec885bea5eb495406e42cb93"
+    },
+    {
+      "path": "scripts/screenshot_cards.py",
+      "source_sha256": "69dcf8e433fb9fa538242c954d2e27b710cd0adc0ec34c41847b81e0ae5bbfaa"
+    },
+    {
+      "path": "templates/newspic_cards.css",
+      "source_sha256": "8279ba9de1965fa0d98c7d7ac2e4e79456d30e1591f5070c401dbd074df82b5d"
+    },
+    {
+      "path": "LICENSE",
+      "source_sha256": "ecc35aff5261123eaf8684efa72bb77fc2a787c29253ef4782056cf2994a5d0e"
+    }
+  ]
+}

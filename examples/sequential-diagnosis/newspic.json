@@ -1,0 +1,90 @@
+{
+  "format_contract": "wechat-newspic-v1",
+  "title": "AI先问诊再检查，诊断能更准吗？",
+  "section": "顶刊精读",
+  "date": "2026-11-20",
+  "author": "YeYe",
+  "source_url": "https://www.science.org/doi/10.1126/science.aeh7930",
+  "hashtags": [
+    "#医疗AI",
+    "#大语言模型",
+    "#论文精读"
+  ],
+  "content": "微软团队把诊断拆成连续决策：先问病史、再选检查，证据充分后才下结论。Science论文中的DxO配合GPT-5，在疑难病例和急诊入院病例的模拟测试中分别达到83.2%和80.3%准确率。较低估算费用来自另一组预算受限配置；这些结果尚不能代表真实临床效果。七页读懂实验设置、数字和边界。\n\n原文：https://www.science.org/doi/10.1126/science.aeh7930\n\n#医疗AI #大语言模型 #论文精读",
+  "need_open_comment": 1,
+  "only_fans_can_comment": 0,
+  "cards": [
+    {
+      "role": "cover",
+      "image": "images/figures/fig-1-case-opening.png",
+      "headline": "AI先问诊再检查\n诊断能更准吗？",
+      "kicker": "SCIENCE · 序列诊断",
+      "dek": "微软DxO逐步获取病情线索，\n把诊断准确率和检查费用一起评估。",
+      "credit": "图1｜诊断智能体按需追问并索取检查结果",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "role": "evidence",
+      "image": "images/figures/fig-2-benchmark.png",
+      "headline": "信息要一条一条问出来",
+      "stat": "304 + 325",
+      "stat_label": "疑难病例 + 急诊入院病例",
+      "note": "DxO让语言模型模拟医生小组，反复校正诊断并挑选检查。SDBench只给简短病情，由Gatekeeper按请求返回信息；原记录缺项时，会生成诊断中性的模拟结果。",
+      "credit": "图2｜SDBench分别记录诊断正确性与估算费用"
+    },
+    {
+      "role": "evidence",
+      "image": "images/figures/fig-1-case-opening.png",
+      "headline": "开第一项检查前，先多问病史",
+      "stat": "25.5 vs 5.6",
+      "stat_label": "AI与医生平均提问数",
+      "note": "在相同疑难病例上，DxO＋GPT-5开首项检查前问得更多。图中病例从咽痛、肿胀与出血开始，随回答调整检查。提问更多本身不等于更有效。",
+      "credit": "图3｜论文案例中的病史追问与首轮检查"
+    },
+    {
+      "role": "evidence",
+      "image": "images/figures/fig-3-cpc.png",
+      "headline": "疑难病例：高分也要看费用",
+      "stat": "83.2%",
+      "stat_label": "DxO＋GPT-5，无预算限制",
+      "note": "AI每例估算费用5431美元；允许查资料的医生平均36.1%、4725美元。疑难病例库共304例，医生对照只在56例留出子集上开展，不能读成双方同测304例。",
+      "credit": "图4｜准确率与估算检查费用的完整对照"
+    },
+    {
+      "role": "evidence",
+      "image": "images/figures/fig-4-cpc-budget.png",
+      "headline": "限制预算后，费用能降多少",
+      "stat": "79.6%",
+      "stat_label": "受限配置：每例1303美元",
+      "note": "这是图中“$1k budget”配置；无预算限制时为83.2%、5431美元。预算目标与最终估算费用不同。费用按美国收费表计算，不等于真实账单或已实现的医疗节支。",
+      "credit": "图5｜同一曲线显示准确率与费用之间的取舍"
+    },
+    {
+      "role": "evidence",
+      "image": "images/figures/fig-5-ed.png",
+      "headline": "换成急诊入院病例，表现如何",
+      "stat": "80.3%",
+      "stat_label": "无预算限制，每例4979美元",
+      "note": "病例库含325次急诊后住院记录；允许查资料的医生平均46.8%、3400美元。另一预算受限配置为73.2%、2634美元。这仍是历史病历模拟，不是急诊现场试验。",
+      "credit": "图6｜急诊病例中不同配置的准确率与估算费用"
+    },
+    {
+      "role": "boundary",
+      "image": "images/figures/fig-6-case-end.png",
+      "headline": "医生用上它之后，会更好吗？",
+      "claim": "本研究支持结构化追问、反复校正诊断的潜力。最终答案由Judge按五级标准评分，4或5分算正确。",
+      "limit": "下一步要验证医生与AI协作能否减少漏诊、避免无效检查并改善患者结局。现有对照为独立作答医生，不能据此推断胜过专科会诊团队。",
+      "credit": "图7｜案例最终诊断与参考诊断的比对"
+    }
+  ],
+  "brand": "AI For Bios",
+  "topic_keywords": [
+    "序列诊断",
+    "顺序诊断",
+    "SDBench",
+    "MAI-DxO"
+  ]
+}

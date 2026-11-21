@@ -1,0 +1,4 @@
+interface:
+  display_name: "WeChat Newspic"
+  short_description: "制作有来源的公众号贴图并核验已授权的草稿交付"
+  default_prompt: "Use $wechat-newspic to turn this paper into a source-backed Chinese WeChat image post and verify the authorized draft delivery."

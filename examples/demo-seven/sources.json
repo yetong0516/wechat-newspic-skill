@@ -1,0 +1,41 @@
+{
+  "topic": "Clearly labeled layout demo",
+  "images": [
+    {
+      "file": "images/layout-1.png",
+      "source_page_url": "https://github.com/yetong0516/wechat-newspic-skill",
+      "origin_url": "https://github.com/yetong0516/wechat-newspic-skill/blob/main/scripts/create_demo.py",
+      "credit": "AI For Bios / layout demonstration",
+      "license": "Repository LICENSE (BSL terms); generated layout fixture",
+      "asset_type": "layout_demo",
+      "retrieval_method": "generated-fixture",
+      "sha256": "c2ebe97d9f42200b70d745928e84f4bb769de3a737509000163a46da95fce428",
+      "width": 1600,
+      "height": 1100
+    },
+    {
+      "file": "images/layout-2.png",
+      "source_page_url": "https://github.com/yetong0516/wechat-newspic-skill",
+      "origin_url": "https://github.com/yetong0516/wechat-newspic-skill/blob/main/scripts/create_demo.py",
+      "credit": "AI For Bios / layout demonstration",
+      "license": "Repository LICENSE (BSL terms); generated layout fixture",
+      "asset_type": "layout_demo",
+      "retrieval_method": "generated-fixture",
+      "sha256": "bc7de972af85f5375234dcab15a8551df511b93b33fed5e2bc9d280888458373",
+      "width": 1600,
+      "height": 1100
+    },
+    {
+      "file": "images/layout-3.png",
+      "source_page_url": "https://github.com/yetong0516/wechat-newspic-skill",
+      "origin_url": "https://github.com/yetong0516/wechat-newspic-skill/blob/main/scripts/create_demo.py",
+      "credit": "AI For Bios / layout demonstration",
+      "license": "Repository LICENSE (BSL terms); generated layout fixture",
+      "asset_type": "layout_demo",
+      "retrieval_method": "generated-fixture",
+      "sha256": "9070b58e1940d844eed1d6d6832f424c99a46cf7573f182e74d55edd54709820",
+      "width": 1600,
+      "height": 1100
+    }
+  ]
+}

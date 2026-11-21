@@ -1,0 +1,159 @@
+/* Based on the BioSpark template; see LICENSE. */
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:#e9ecf5}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif}
+.card{width:1080px;height:1440px;position:relative;overflow:hidden;page-break-after:always;background:#111e3b;color:white}
+.media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* Expanded editions keep one finding and its original visual on each page. */
+.multi-cover .media { object-fit: cover; }
+.multi-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8,17,17,.98) 0%, rgba(8,17,17,.86) 30%, rgba(8,17,17,.07) 69%, rgba(8,17,17,.83) 100%);
+}
+.multi-cover-head, .multi-cover-foot, .multi-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 27px;
+  line-height: 1.35;
+  letter-spacing: 1px;
+}
+.multi-cover-head, .multi-cover-foot {
+  position: absolute;
+  left: 68px;
+  right: 68px;
+}
+.multi-cover-head { top: 63px; }
+.multi-cover-foot { bottom: 60px; }
+.multi-cover-head b, .multi-cover-foot b, .multi-kicker { color: #4ecdc4; }
+.multi-cover-copy {
+  position: absolute;
+  top: 153px;
+  left: 68px;
+  right: 68px;
+}
+.multi-kicker { font-size: 34px; font-weight: 760; letter-spacing: 1px; }
+.multi-cover-copy h1 {
+  font-size: 92px;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -3px;
+  margin: 23px 0 28px;
+}
+.multi-cover-copy p {
+  max-width: 860px;
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.35;
+  color: #eff7f5;
+}
+.multi-page {
+  display: flex;
+  flex-direction: column;
+  padding: 58px 68px 60px;
+  background: #f4f6f2;
+  color: #152422;
+}
+.multi-head {
+  padding-bottom: 21px;
+  border-bottom: 2px solid #b8cec8;
+  color: #415e56;
+}
+.multi-head b { font-weight: 800; color: #15675b; }
+.multi-page h2 {
+  margin: 39px 0 18px;
+  font-size: 66px;
+  line-height: 1.13;
+  letter-spacing: -2px;
+  font-weight: 870;
+}
+.multi-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 22px;
+  margin-bottom: 24px;
+}
+.multi-stat strong {
+  color: #147568;
+  font-size: 61px;
+  line-height: 1.08;
+  letter-spacing: -2px;
+  white-space: nowrap;
+}
+.multi-stat span { font-size: 31px; font-weight: 680; color: #344e48; }
+.multi-figure {
+  display: flex;
+  flex-direction: column;
+  margin: 12px 0 0;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.multi-images {
+  display: flex;
+  gap: 16px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.multi-frame {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  background: #e6ebe5;
+  display: flex;
+  flex-direction: column;
+}
+.multi-frame img { display: block; width: 100%; min-height: 0; flex: 1 1 0; object-fit: contain; }
+.multi-frame-label { text-align: center; font-size: 25px; font-weight: 700; color: #29443d; }
+.multi-frame-label:not(:empty) { padding: 11px; }
+.multi-panels {
+  display: grid;
+  gap: 10px;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-rows: minmax(0, 1fr);
+}
+.multi-panels .multi-frame { overflow: hidden; background: #edf1ec; }
+.multi-panels .multi-frame-label { padding: 7px 5px; font-size: 25px; }
+.panel-grid-2, .panel-lead-top { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.panel-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.panel-lead-left { grid-template-columns: minmax(0, 1.17fr) minmax(0, 1fr); }
+.panel-lead-left .multi-frame:first-child { grid-row: span 2; }
+.panel-lead-top { grid-template-rows: minmax(0, 1.04fr) minmax(0, 1fr); }
+.panel-lead-top .multi-frame:first-child { grid-column: span 2; }
+.multi-figure figcaption {
+  padding: 14px 0 0;
+  font-size: 26px;
+  color: #485d57;
+  line-height: 1.28;
+}
+.multi-copy { margin-top: 25px; }
+.multi-copy p { margin: 0; font-size: 39px; line-height: 1.46; }
+.multi-copy p + p { margin-top: 20px; }
+.multi-copy .multi-takeaway { font-weight: 760; color: #15675b; }
+
+/* Editorial layout: large headline, intact source image, compact explanation. */
+.multi-page{padding:45px 55px 48px;background:#f7f8fc;color:#15213a}
+.multi-head{font-size:24px;padding-bottom:15px;border-bottom:1px solid #d6dced;color:#56647d}
+.multi-head b{color:#344bee;letter-spacing:0}
+.multi-page h2{font-size:57px;line-height:1.22;letter-spacing:-1.6px;margin:29px 0 18px}
+.multi-stat{gap:22px;margin-bottom:14px;align-items:baseline}
+.multi-stat strong{font-size:62px;color:#344bee;letter-spacing:-1.5px}
+.multi-stat span{font-size:28px;line-height:1.38;color:#485671}
+.multi-frame{background:white;border:1px solid #e0e5f2;border-radius:16px;overflow:hidden;padding:12px}
+.multi-figure{margin:12px 0 0;min-height:0}
+.multi-figure figcaption{font-size:24px;color:#68758e;padding-top:14px;line-height:1.3}
+.multi-copy{margin-top:24px}
+.multi-copy p{font-size:34px;line-height:1.52;color:#263650}
+.multi-copy p+p{margin-top:20px}
+.multi-copy .multi-takeaway{font-weight:650;color:#344bee}
+.multi-cover{background:#111e3b;color:white}
+.multi-cover .media{left:55px;top:654px;width:970px;height:585px;object-fit:contain!important;background:white;border-radius:20px;padding:15px}
+.multi-shade{background:linear-gradient(145deg,rgba(52,75,238,.28),transparent 58%);height:640px}
+.multi-cover-head{left:55px;right:55px;top:45px;font-size:24px;color:#c8d2ee}
+.multi-cover-head b{color:white;letter-spacing:0}
+.multi-cover-copy{left:55px;right:55px;top:159px}
+.multi-kicker{font-size:28px;font-weight:600;color:#b4c1ff;letter-spacing:2px}
+.multi-cover-copy h1{font-size:82px;line-height:1.18;letter-spacing:-2px;margin:31px 0 28px}
+.multi-cover-copy p{font-size:35px;line-height:1.5;max-width:910px;color:#d8e0f7}
+.multi-cover-foot{left:55px;right:55px;bottom:59px;font-size:23px;color:#becae7}
+.multi-cover-foot b{color:#bcc8ff}
