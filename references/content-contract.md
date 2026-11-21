@@ -18,6 +18,8 @@
 
 Cover fields: `image`, `headline`, `kicker`, `credit`; optional `dek`. Evidence: `image`, `headline`, `stat`, `stat_label`, `note`, `credit`. Boundary: `image`, `headline`, `claim`, `limit`, `credit`. The last two fields become natural paragraphs rather than canned “did/did not prove” badges.
 
+The cover uses a full-canvas image, an upper dark gradient and overlaid text, with no white image frame. Set optional `focal_point` (`x` and `y`, each 0–1) to keep the subject visible during `object-fit: cover` cropping. Read [cover design](cover-design.md) before choosing the image. Evidence-page image frames are unchanged.
+
 All pages need a local image. Optional `companion_image` gives a second panel. `panels` with `panel_layout` supports `grid-2`/`grid-3` (six panels) or `lead-left`/`lead-top` (three panels). Each panel uses `image`, optional `label`, `fit` (`contain`/`cover`) and `position` (`center`/`top`/`bottom`). Keep panel order, scales and labels faithful to the original. Review crops visually.
 
 `sources.json.images` maps exact relative paths to records, not basenames. Each used image needs `file`, `source_page_url`, `origin_url`, `asset_type`, `retrieval_method`, `credit`, `license`, `sha256`, `width`, `height`. The validator compares bytes and dimensions. Symlinks escaping the draft and parent traversal are rejected.

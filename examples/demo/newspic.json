@@ -11,15 +11,19 @@
     "#排版演示",
     "#科研传播"
   ],
-  "content": "这是一份公众号贴图的排版演示，三幅几何图都是程序绘制的测试素材，用来检查封面、证据页、收尾页与中文排版。图中不含实验结果，也不代表任何模型性能。正式制作时，需要换成经过核验并记录来源与许可的真实图片，逐页查看成图后再保存草稿。\n\n示例：https://github.com/yetong0516/wechat-newspic-skill\n\n#排版演示 #科研传播",
+  "content": "这是一份公众号贴图的排版演示，几何图都是程序绘制的测试素材，用来检查封面、证据页、收尾页与中文排版。图中不含实验结果，也不代表任何模型性能。正式制作时，需要换成经过核验并记录来源与许可的真实图片，逐页查看成图后再保存草稿。\n\n示例：https://github.com/yetong0516/wechat-newspic-skill\n\n#排版演示 #科研传播",
   "cards": [
     {
       "role": "cover",
-      "image": "images/layout-1.png",
+      "image": "images/layout-cover.png",
       "headline": "科研公众号贴图\n从材料到三页成图",
       "kicker": "LAYOUT DEMO · 排版示例",
       "dek": "用明确标注的演示素材，检查中文、原图位置与页面顺序。",
-      "credit": "图1｜几何形状仅用于排版演示"
+      "credit": "图1｜几何画面用于演示满版封面的构图",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.6
+      }
     },
     {
       "role": "evidence",

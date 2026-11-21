@@ -21,6 +21,8 @@ Map every consequential claim to a source location. Keep denominators, models, s
 
 Prefer authentic source images. Record URL, author, license status, hash, dimensions and any crop in `sources.json`. Do not generate scientific results, interfaces or comments. An unknown redistribution license must remain unknown. The bundled demo is explicitly a layout fixture; its upload is disabled. For the Science example, [supply a lawful local PDF](examples/sequential-diagnosis/README.md); the repository does not distribute that PDF or its images.
 
+For every cover, read [cover selection and composition](references/cover-design.md). Choose a strong, topic-relevant photograph, microscopy image or official key visual first. Fill the entire canvas with it; overlay the title on a dark upper gradient and leave the lower subject visible. Do not put the cover image inside a white rounded panel. Dense paper diagrams and tables normally belong on evidence pages. Use `focal_point` and inspect the actual crop; do not override the template back to a split layout in draft-local CSS.
+
 Draft `newspic.json` using one question per page: a cover, evidence pages, and an evidence-based conclusion or limitation. Keep the caption 80–180 Chinese characters, include the primary URL and 2–4 hashtags, and use a 12–24-character title. Visible figure captions describe the image in one sentence; full provenance belongs in `sources.json`.
 
 ## Render and inspect

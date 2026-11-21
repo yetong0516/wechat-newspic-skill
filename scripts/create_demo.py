@@ -8,6 +8,28 @@ from manifest import digest, write_json
 from newspic import FORMAT_CONTRACT
 
 
+def create_cover_fixture(path):
+    """Owned abstract artwork for crop/layout checks, never a scientific image."""
+    image=Image.new('RGB',(1080,1440))
+    draw=ImageDraw.Draw(image)
+    for y in range(1440):
+        t=y/1439
+        draw.line((0,y,1080,y),fill=(int(20-9*t),int(39-15*t),int(54-17*t)))
+    def cube(x,y,size,top,left,right):
+        half=size*.48;height=size*.84
+        draw.polygon([(x,y-half),(x+size,y),(x,y+half),(x-size,y)],fill=top)
+        draw.polygon([(x-size,y),(x,y+half),(x,y+half+height),(x-size,y+height)],fill=left)
+        draw.polygon([(x,y+half),(x+size,y),(x+size,y+height),(x,y+half+height)],fill=right)
+    teal=('#65D4C7','#276D7C','#3B9EA0')
+    lavender=('#AAA6E4','#4A527C','#7279AF')
+    coral=('#E4AF91','#915F61','#B78376')
+    for x,y,size,palette in [(945,390,95,lavender),(135,640,80,coral),(430,715,115,teal),
+                               (765,850,160,lavender),(250,1010,150,teal),(1010,1090,120,coral),
+                               (520,1260,165,coral),(25,1280,105,lavender)]:
+        cube(x,y,size,*palette)
+    image.save(path)
+
+
 def create(out, pages=3):
     out=Path(out)
     if out.exists() and any(out.iterdir()):
@@ -31,11 +53,17 @@ def create(out, pages=3):
             origin_url='https://github.com/yetong0516/wechat-newspic-skill/blob/main/scripts/create_demo.py',
             credit='AI For Bios / layout demonstration',license='Repository LICENSE (BSL terms); generated layout fixture',
             asset_type='layout_demo',retrieval_method='generated-fixture',sha256=digest(path.read_bytes()),width=1600,height=1100))
-    caption=('这是一份公众号贴图的排版演示，三幅几何图都是程序绘制的测试素材，用来检查封面、证据页、收尾页与中文排版。'
+    cover=out/'images/layout-cover.png'
+    create_cover_fixture(cover)
+    records.append(dict(file='images/layout-cover.png',source_page_url='https://github.com/yetong0516/wechat-newspic-skill',
+        origin_url='https://github.com/yetong0516/wechat-newspic-skill/blob/main/scripts/create_demo.py',
+        credit='AI For Bios / abstract layout demonstration',license='Repository LICENSE (BSL terms); generated layout fixture',
+        asset_type='layout_demo',retrieval_method='generated-fixture',sha256=digest(cover.read_bytes()),width=1080,height=1440))
+    caption=('这是一份公众号贴图的排版演示，几何图都是程序绘制的测试素材，用来检查封面、证据页、收尾页与中文排版。'
              '图中不含实验结果，也不代表任何模型性能。正式制作时，需要换成经过核验并记录来源与许可的真实图片，逐页查看成图后再保存草稿。'
              '\n\n示例：https://github.com/yetong0516/wechat-newspic-skill\n\n#排版演示 #科研传播')
-    cards=[dict(role='cover',image='images/layout-1.png',headline='科研公众号贴图\n从材料到七页成图' if pages==7 else '科研公众号贴图\n从材料到三页成图',kicker='LAYOUT DEMO · 排版示例',
-        dek='用明确标注的演示素材，检查中文、原图位置与页面顺序。',credit='图1｜几何形状仅用于排版演示')]
+    cards=[dict(role='cover',image='images/layout-cover.png',headline='科研公众号贴图\n从材料到七页成图' if pages==7 else '科研公众号贴图\n从材料到三页成图',kicker='LAYOUT DEMO · 排版示例',
+        dek='用明确标注的演示素材，检查中文、原图位置与页面顺序。',credit='图1｜几何画面用于演示满版封面的构图',focal_point={'x':0.5,'y':0.6})]
     for i in range(2,pages):
         cards.append(dict(role='evidence',image=f'images/layout-{1+(i%3)}.png',headline='每一页解释一个具体问题',stat='1080 × 1440',stat_label='微信贴图的输出像素尺寸',
             note='这里放一条经过原文核对的结果，并在同一页说明对应样本、指标或限制。本页仅为版式演示；图中形状不表示科学数据。',credit=f'图{i}｜不同形状用于检查图片缩放和文字位置'))

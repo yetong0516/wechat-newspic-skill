@@ -114,8 +114,43 @@ class ContractTests(unittest.TestCase):
             path=Path(tmp);data=fixture(path)
             # An exact relative path must be present, even if a different folder uses the same basename.
             src=json.loads((path/'sources.json').read_text())
-            src['images'][0]['file']='another/layout-1.png';manifest.write_json(path/'sources.json',src)
+            used=data['cards'][0]['image']
+            next(record for record in src['images'] if record['file']==used)['file']='another/'+Path(used).name
+            manifest.write_json(path/'sources.json',src)
             self.assertFalse(newspic.validate_newspic(path,data,require_rendered=False)['passed'])
+
+
+class CoverLayoutTests(unittest.TestCase):
+    def test_cover_fills_canvas_and_respects_focal_point(self):
+        from playwright.sync_api import sync_playwright
+        with tempfile.TemporaryDirectory() as tmp, sync_playwright() as pw:
+            browser=pw.chromium.launch(headless=True)
+            for count in (3,7):
+                with self.subTest(pages=count):
+                    path=Path(tmp)/str(count);create_demo.create(path,count)
+                    data=newspic.load_newspic(path);data['cards'][0]['focal_point']={'x':.75,'y':.6}
+                    page=browser.new_page(viewport={'width':1080,'height':1440})
+                    (path/'newspic.html').write_text(newspic.build_html(path,data),encoding='utf-8')
+                    page.goto((path/'newspic.html').as_uri(),wait_until='networkidle')
+                    page.evaluate('document.fonts.ready')
+                    boxes=page.evaluate('''() => {
+                      const card=document.querySelector('.multi-cover');
+                      const image=card.querySelector('.media'),shade=card.querySelector('.multi-shade');
+                      const copy=card.querySelector('.multi-cover-copy');
+                      const rect=e=>{const r=e.getBoundingClientRect();return [r.x,r.y,r.width,r.height]};
+                      const s=getComputedStyle(image);
+                      return {card:rect(card),image:rect(image),shade:rect(shade),fit:s.objectFit,
+                        position:s.objectPosition,padding:s.padding,border:s.borderWidth,radius:s.borderRadius,
+                        copyBackground:getComputedStyle(copy).backgroundColor,copyBottom:copy.getBoundingClientRect().bottom};
+                    }''')
+                    self.assertEqual(boxes['card'],boxes['image'])
+                    self.assertEqual(boxes['card'],boxes['shade'])
+                    self.assertEqual(boxes['fit'],'cover');self.assertEqual(boxes['position'],'75% 60%')
+                    for prop in ('padding','border','radius'):self.assertEqual(boxes[prop],'0px')
+                    self.assertEqual(boxes['copyBackground'],'rgba(0, 0, 0, 0)')
+                    self.assertLess(boxes['copyBottom'],1440*.55)
+                    page.close()
+            browser.close()
 
 
 class DeliveryTests(unittest.TestCase):
