@@ -96,8 +96,12 @@ python scripts/check_public_export.py
 
 本仓库沿用上游 [BSL 1.1 条款](LICENSE)，属于公开源码（source-available），**不是无商用限制的MIT项目**。学习、评估和约定的非商业用途按LICENSE执行；商业使用需要另行许可。图片、论文和第三方依赖按各自条款，见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
-BioSpark · AI For Bios  
-Based on BioSpark WeChat OA Automation Pipeline  
-Copyright (c) 2026 BioSpark / AI For Bios  
-Licensed under BSL 1.1  
+BioSpark · AI For Bios
+
+Based on BioSpark WeChat OA Automation Pipeline
+
+Copyright (c) 2026 BioSpark / AI For Bios
+
+Licensed under BSL 1.1
+
 https://github.com/yetong0516/BioSpark_AI-For-Bios_WeChat-OA-Automation-Pipeline

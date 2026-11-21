@@ -42,4 +42,3 @@ def apply_theme(text: str, target: str) -> tuple:
                     text = text.replace(variant, tv)
                     n += cnt
     return text, n
-
