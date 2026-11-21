@@ -404,7 +404,7 @@ def main():
         else:result=save(draft,client,data,update_id=args.update,snapshot_path=args.snapshot)
         print(json.dumps({k:v for k,v in result.items() if k!='image_checks'},ensure_ascii=False,indent=2))
         return 0 if result.get('passed',True) else 2
-    except (DeliveryError, OSError, ValueError, KeyError, TypeError) as error:
+    except (DeliveryError, newspic.NewspicError, OSError, ValueError, KeyError, TypeError) as error:
         safe=str(error) if isinstance(error,DeliveryError) else type(error).__name__
         print(json.dumps({'error':safe,'published':None,'instructions':'Inspect stored state before retrying any uncertain save.'},ensure_ascii=False))
         return 1

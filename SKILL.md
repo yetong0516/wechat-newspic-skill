@@ -12,6 +12,7 @@ Turn a paper, verified news item, or existing draft into 3–20 ordered 1080×14
 - Read the target project's instructions and its topic/draft records. Determine whether the request is research-only, a new post, a revision, or delivery of an existing post. Protect uncommitted files and existing backend edits.
 - Keep the user's requested topic, destination and scope. Pages follow the evidence; seven pages are an example, not a fixed requirement.
 - For AI For Bios, keep that exact capitalization. Other accounts can set `brand` and `author` in `newspic.json`. Do not copy a personal account's credentials, historical draft IDs or standing authorization into another installation.
+- Place the approved PNG mark next to AI For Bios at the cover's upper left; reuse the original pixels. The renderer bundles that mark for AI For Bios. Other brands can supply their own local PNG with `cover_logo`; see the content contract.
 
 ## Research and prepare
 

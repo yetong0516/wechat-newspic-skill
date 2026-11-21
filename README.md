@@ -8,6 +8,10 @@
 
 封面采用**优质原图满版铺底、上部渐变压暗、标题直接叠加、中下部保留主体**的布局。正式制作优先选实验照片、显微画面或官方主视觉；密集论文截图通常放在正文证据页。选图与裁切规则见[封面设计](references/cover-design.md)。
 
+AI For Bios封面左上角默认带透明PNG标志，与品牌文字并排。其他品牌可设置`cover_logo`使用自己的PNG；未指定时保留文字页眉。
+
+![AI For Bios PNG页眉](assets/previews/logo-header.png)
+
 ## 包含什么
 
 | 内容 | 入口 |

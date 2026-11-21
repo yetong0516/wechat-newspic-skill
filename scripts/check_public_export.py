@@ -27,7 +27,8 @@ def scan(paths):
         if path.stat().st_size>5*1024*1024:
             findings.append((str(rel),'oversized_release_file'))
         if path.suffix.lower() in {'.png','.jpg','.jpeg'}:
-            if not (str(rel).startswith('assets/previews/') or str(rel).startswith('examples/demo')):
+            if not (str(rel).startswith('assets/previews/') or str(rel).startswith('examples/demo')
+                    or str(rel)=='assets/brand/ai-for-bios-mark.png'):
                 findings.append((str(rel),'unreviewed_binary_asset'))
             continue
         try:text=path.read_text(encoding='utf-8')

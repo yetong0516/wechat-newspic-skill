@@ -129,6 +129,7 @@ class CoverLayoutTests(unittest.TestCase):
                 with self.subTest(pages=count):
                     path=Path(tmp)/str(count);create_demo.create(path,count)
                     data=newspic.load_newspic(path);data['cards'][0]['focal_point']={'x':.75,'y':.6}
+                    data['brand']='AI For Bios'
                     page=browser.new_page(viewport={'width':1080,'height':1440})
                     (path/'newspic.html').write_text(newspic.build_html(path,data),encoding='utf-8')
                     page.goto((path/'newspic.html').as_uri(),wait_until='networkidle')
@@ -139,7 +140,9 @@ class CoverLayoutTests(unittest.TestCase):
                       const copy=card.querySelector('.multi-cover-copy');
                       const rect=e=>{const r=e.getBoundingClientRect();return [r.x,r.y,r.width,r.height]};
                       const s=getComputedStyle(image);
+                      const logo=card.querySelector('.cover-logo');
                       return {card:rect(card),image:rect(image),shade:rect(shade),fit:s.objectFit,
+                        logoLoaded:logo.complete&&logo.naturalWidth>0,logoSource:logo.src.slice(0,22),
                         position:s.objectPosition,padding:s.padding,border:s.borderWidth,radius:s.borderRadius,
                         copyBackground:getComputedStyle(copy).backgroundColor,copyBottom:copy.getBoundingClientRect().bottom};
                     }''')
@@ -148,6 +151,8 @@ class CoverLayoutTests(unittest.TestCase):
                     self.assertEqual(boxes['fit'],'cover');self.assertEqual(boxes['position'],'75% 60%')
                     for prop in ('padding','border','radius'):self.assertEqual(boxes[prop],'0px')
                     self.assertEqual(boxes['copyBackground'],'rgba(0, 0, 0, 0)')
+                    self.assertTrue(boxes['logoLoaded'])
+                    self.assertEqual(boxes['logoSource'],'data:image/png;base64,')
                     self.assertLess(boxes['copyBottom'],1440*.55)
                     page.close()
             browser.close()

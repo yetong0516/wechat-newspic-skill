@@ -158,6 +158,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK S
 .multi-cover{background:#071112;color:white}
 .multi-cover-head{left:55px;right:55px;top:45px;font-size:24px;color:#c8d2ee}
 .multi-cover-head b{color:white;letter-spacing:0}
+.multi-cover-head .cover-brand{display:inline-flex;align-items:center;gap:12px}
+.multi-cover-head .cover-logo{display:block;width:54px;height:54px;object-fit:contain;flex:0 0 54px;padding:4px;background:#fff;border-radius:50%}
 .multi-cover-copy{left:55px;right:55px;top:159px;background:transparent}
 .multi-kicker{font-size:28px;font-weight:600;color:#b4c1ff;letter-spacing:2px}
 .multi-cover-copy h1{font-size:82px;line-height:1.18;letter-spacing:-2px;margin:31px 0 28px}

@@ -7,6 +7,7 @@
 | `format_contract` | `wechat-newspic-v1` |
 | `title` | 12–24 visible characters |
 | `brand`, `author` | Visible masthead and submitted author; author is mandatory for saving |
+| `cover_logo` | Optional draft-relative PNG path; AI For Bios uses its bundled PNG by default. Set false to hide. Cover only. |
 | `section` | 前沿科创 / 顶刊精读 / 人物专访 / 工具介绍 |
 | `date` | Editorial card date, not a fabricated publication date |
 | `source_url` | Primary source URL, also included in `content` |

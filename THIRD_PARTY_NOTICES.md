@@ -13,4 +13,6 @@ The original pipeline's poster concepts referenced Poster Studio and puppeteer-s
 
 `examples/demo` and `examples/demo-seven` contain generated geometric layout fixtures, not experimental images or model results. They are covered by the repository license.
 
+`assets/brand/ai-for-bios-mark.png` is the user's approved AI For Bios identity asset, included for the account's template masthead without changing its pixels. Other brands should replace it; its inclusion is not permission to represent or claim endorsement from AI For Bios.
+
 The Science case uses editorial paraphrases and public bibliographic facts. The paper and its figures remain copyright 2026 The Authors, exclusive licensee AAAS. No paper PDF, figure image or rendered card containing that artwork is distributed. Users must obtain and assess permissions for their own source material. No permission to imply endorsement by AI For Bios or a source author is granted by inclusion of a name or link.

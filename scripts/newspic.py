@@ -8,6 +8,7 @@ newspic.json 是唯一内容源；样式由 templates/newspic_cards.css 固定�
 from __future__ import annotations
 
 import argparse
+import base64
 import html
 import json
 import re
@@ -117,6 +118,17 @@ def validate_newspic(draft: Path, data: dict | None = None, *, require_rendered=
          str(data.get("format_contract") or "缺失"))
     section = data.get("section")
     _add(checks, "板块可识别", section in SECTION_THEME, str(section or "缺失"))
+    try:
+        from PIL import Image
+        logo = cover_logo_path(draft, data)
+        if logo is not None:
+            with Image.open(logo) as im:
+                if im.format != "PNG":
+                    raise NewspicError("cover_logo 只接受 PNG")
+                im.verify()
+        _add(checks, "封面 PNG 标志有效", True)
+    except (NewspicError, OSError, ValueError):
+        _add(checks, "封面 PNG 标志有效", False, "检查 cover_logo 路径和 PNG 文件")
 
     title = str(data.get("title") or "").strip()
     title_count = _visible_count(title)
@@ -280,7 +292,33 @@ def _card_image(card: dict) -> str:
     return html.escape(str(card["image"]), quote=True)
 
 
-def _multi_card(card: dict, index: int, total: int, brand: str, section: str, date: str) -> str:
+def cover_logo_path(draft: Path, data: dict) -> Path | None:
+    ref = data.get("cover_logo")
+    if ref is False or ref == "":
+        return None
+    if ref is not None:
+        path = _safe_local_path(draft, ref)
+        if path is None or not path.is_file():
+            raise NewspicError("cover_logo 必须是草稿目录内的 PNG 文件")
+        return path
+    if str(data.get("brand") or MASTHEAD).strip() == MASTHEAD:
+        return PROJECT_ROOT / "assets" / "brand" / "ai-for-bios-mark.png"
+    return None
+
+
+def _cover_brand(draft: Path, data: dict, brand: str) -> str:
+    from PIL import Image
+    path = cover_logo_path(draft, data)
+    if path is None:
+        return brand
+    with Image.open(path) as im:
+        if im.format != "PNG":
+            raise NewspicError("cover_logo 只接受 PNG")
+    encoded = base64.b64encode(path.read_bytes()).decode("ascii")
+    return f'<img class="cover-logo" src="data:image/png;base64,{encoded}" alt=""><span>{brand}</span>'
+
+
+def _multi_card(card: dict, index: int, total: int, brand: str, section: str, date: str, cover_brand: str | None = None) -> str:
     page = f"{index:02d} / {total:02d}"
     headline = _lines(card["headline"])
     credit = _lines(card["credit"])
@@ -288,7 +326,7 @@ def _multi_card(card: dict, index: int, total: int, brand: str, section: str, da
         return f"""<section class="card multi-cover">
   <img class="media" src="{_card_image(card)}" style="object-position:{_position(card)}" alt="">
   <div class="multi-shade"></div>
-  <header class="multi-cover-head"><b>{brand}</b><span>{section} · {date}</span></header>
+  <header class="multi-cover-head"><b class="cover-brand">{cover_brand or brand}</b><span>{section} · {date}</span></header>
   <div class="multi-cover-copy"><div class="multi-kicker">{_lines(card['kicker'])}</div>
     <h1>{headline}</h1><p>{_lines(card.get('dek', ''))}</p>
   </div>
@@ -331,7 +369,8 @@ def build_html(draft: Path, data: dict) -> str:
     date = html.escape(str(data.get("date") or ""))
     section = html.escape(str(data["section"]))
     brand = html.escape(str(data.get("brand") or MASTHEAD))
-    sections = "\n".join(_multi_card(card, index, len(data["cards"]), brand, section, date)
+    cover_brand = _cover_brand(draft, data, brand)
+    sections = "\n".join(_multi_card(card, index, len(data["cards"]), brand, section, date, cover_brand)
         for index, card in enumerate(data["cards"], 1))
     return f"<!DOCTYPE html><html lang='zh-CN'><head><meta charset='utf-8'><title>{html.escape(data['title'])}</title><style>{css}</style></head><body>{sections}</body></html>"
 

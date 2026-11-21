@@ -69,7 +69,10 @@ def check_sources(draft, data):
 
 
 def input_fingerprint(draft, data):
+    from newspic import cover_logo_path
+    logo = cover_logo_path(draft, data)
     payload = {'content': data, 'sources': digest((draft/'sources.json').read_bytes()),
+               'cover_logo': digest(logo.read_bytes()) if logo is not None else None,
                'images': {r: digest(local_image(draft,r).read_bytes()) for r in image_refs(data)},
                'renderer': {r: digest((ROOT/r).read_bytes()) for r in
                    ('scripts/newspic.py','scripts/screenshot_cards.py','scripts/themes.py','templates/newspic_cards.css')}}
@@ -90,5 +93,5 @@ def render_is_current(draft, data):
         return (saved['input_sha256'] == input_fingerprint(draft,data)
                 and list(saved['images']) == expected
                 and all(digest((draft/n).read_bytes()) == saved['images'][n] for n in expected))
-    except (ValueError, OSError, KeyError, TypeError):
+    except (ValueError, OSError, KeyError, TypeError, RuntimeError):
         return False
